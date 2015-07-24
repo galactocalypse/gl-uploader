@@ -1,0 +1,14 @@
+{
+  "name": "gl-uploader",
+  "version": "1.0.0",
+  "description": "Upload processing utility",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "upload"
+  ],
+  "author": "galactocalypse <galactocalypse@gmail.com> (https://github.com/galactocalypse)",
+  "license": "ISC"
+}
