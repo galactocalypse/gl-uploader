@@ -1,5 +1,6 @@
 var path = require('path');
 var fs = require('fs');
+var fileTypes = require('filetypes');
 
 var Uploader = function() {
 	// config stuff
@@ -10,17 +11,8 @@ var Uploader = function() {
 };
 
 var getFileType = function getFileType (ext){
-	switch(ext){
-		case '.jpg':
-		case '.jpeg':
-		case '.png':
-		return 'image';
-		case '.doc':
-		case '.docx':
-		case '.pdf':
-		return 'doc';
-		default: return "undefined";
-	}
+	if (fileTypes && fileTypes[ext]) return fileTypes[ext];
+	return 'unrecognized';
 };
 
 var multiUpload = function multiUpload (req, fname, tmp, base, location, uP, next){
@@ -43,7 +35,7 @@ var multiUpload = function multiUpload (req, fname, tmp, base, location, uP, nex
 					owner: uP.owner,
 					name: path.basename(u.fd),
 					size: path.basename(u.size),
-					type: getFileType(path.extname(u.fd)),
+					type: getFileType(path.extname(u.fd).substring(1)),
 					target: location
 	 			};
 	 			uObs.push(uploadParams);
