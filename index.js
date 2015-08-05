@@ -1,3 +1,3 @@
 var Uploader = require('./uploader');
 
-exports = module.exports = new Uploader();
+exports = module.exports = Uploader;

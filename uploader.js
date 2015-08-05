@@ -2,11 +2,20 @@ var path = require('path');
 var fs = require('fs');
 var fileTypes = require('filetypes');
 
-var Uploader = function() {
-	// config stuff
-	this.defaultTemp = '/';
-	this.defaultBase = '/';
-	this.defaultLocation = '';
+var Uploader = function(options) {
+	options || (options = {});
+	return initialize.call(this, options);
+};
+
+var initialize = function(options){
+	this.temp = options.temp || '/';
+	if (options.locations) {
+		if (Object.prototype.toString.call(options.locations) === '[object Array]')
+			this.locations = options.locations;
+		else if (typeof options.locations === 'string')
+			this.locations = [options.locations];
+	}
+	else this.locations = ['/tmp/'];
 	return this;
 };
 
