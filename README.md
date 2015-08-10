@@ -4,6 +4,7 @@ Processes uploads and returns an object with file details, allowing you to proce
 ##Goal
 Allow processing multiple multi-file uploads automatically based on pre-set configuration, specifically to facilitate
 
+* checking file type before upload
 * storing files in multiple, dynamic paths
 * preventing failed uploads from cluttering the file storage
 * uploading files to multiple locations
