@@ -1,4 +1,6 @@
 # gl-uploader
+(no releases yet; currently in planning stage)
+
 Processes uploads and returns an object with file details, allowing you to process uploads as regular params.
 
 ##Goal
